@@ -1,0 +1,9 @@
+{% extends 'course/base.html' %}
+{% block content%}
+    <h1>Добро пожаловать!</h1>
+    
+    <a href="{% url 'branches_list' %}" class="btn btn-success">Филиалы</a>
+    <a href="{% url 'group_list' %}" class="btn btn-success">Группы</a>
+    <a href="{% url 'student_list' %}" class="btn btn-success">Студенты</a>
+
+     {% endblock %}

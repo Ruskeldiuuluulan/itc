@@ -1,0 +1,11 @@
+Karlygach, [18.06.21 20:49]
+{% extends 'course/base.html' %}
+
+{% block content %}
+    <h1> Изменить группу</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Сохранить</button>
+    </form>
+{% endblock %}

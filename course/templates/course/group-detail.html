@@ -1,0 +1,14 @@
+{% extends 'course/base.html' %}
+
+{% block content %}
+    <h1> {{ group.name }}</h1>
+    <p>Адрес: <strong>{{ group.branch }} </strong></p>
+
+    <p>Студенты группы: </p>
+
+    <ul>
+        {% for s in students %}
+            <li>{{ s.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

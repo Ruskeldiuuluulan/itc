@@ -1,0 +1,30 @@
+{% extends 'course/base.html' %}
+
+{% block content %}
+    <h1 style="text-align: center;">Филиалы</h1>
+        <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+            <th scope="col">id</th>
+            <th scope="col">Название</th>
+            <th scope="col">Адрес</th>
+            <th scope="col">Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for branch in branches %}
+            <tr>
+            <th scope="row">{{ branch.id }}</th>
+            <td>{{ branch.name }}</td>
+            <td>{{ branch.address }}</td>
+            <td>
+                <a href="{% url 'branch_detail' branch.id %}" class='btn btn-primary btn-sm'>Подробнее</a> 
+            </td>
+            </tr>
+        {% endfor %}    
+        </tbody>
+        </table>
+        {% if user.is_authenticated %}
+        <a href="{% url 'branch_create' %}" class="btn btn-primary"> Добавить</a>
+        {% endif %}
+{% endblock %}

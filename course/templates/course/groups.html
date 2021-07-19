@@ -1,0 +1,26 @@
+{% extends 'course/base.html' %}
+{% block content %}
+    <h1 style="text-align: center;">Группы</h1>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Филиал</th>
+                    <th scope="col">Действие</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for group in groups %}
+                <tr>
+                    <th scope="row">{{ group.id }}</th>
+                    <td>{{ group.name }}</td>
+                    <td>{{ group.branch }}</td>
+                    <td>
+                        <a href="{% url 'group_detail' group.id %}" class='btn btn-primary btn-sm'>Подробнее</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock content %}

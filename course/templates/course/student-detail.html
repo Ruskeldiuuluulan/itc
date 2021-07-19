@@ -1,0 +1,22 @@
+    {% extends 'course/base.html' %}
+    {% block content %}
+        {% if student.gender == "male"%}
+        <h1 style="color:  blue;"> {{ student.name }}</h1>
+        {% else %}
+        <h1 style="color: pink;"> {{ student.name }}</h1>
+        {% endif %}
+    
+        <p>Дата рождения: <strong>{{ student.date_of_birth }} </strong></p>
+        <p>Адрес: <strong>{{ student.address }} </strong></p>
+        <p>Номер телефона: <strong>{{ student.phone_number }} </strong></p>
+        <p>Пол: <strong>{{ student.gender }} </strong></p>
+        <p>Группа: <strong>{{ student.group }} </strong></p>
+        
+        <p>Курсы</p>
+         
+        <ul>
+            {% for course in student.courses.all %}
+            <li> {{ course.name }} </li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
